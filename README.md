@@ -123,6 +123,5 @@ This project is licensed under the **MIT License**.
 
 ## Author
 
-**Your Name**
 GitHub: [Sreeja975](https://github.com/Sreeja975)
 Email: [bwumca24001@brainwareuniversity.ac.in](mailto:bwumca24001@brainwareuniversity.ac.in)
