@@ -12,18 +12,21 @@ export default function Dashboard() {
   const [images, setImages] = useState([]);
   const [uploading, setUploading] = useState(false);
 
-  // ✅ Check if user is logged in and fetch images
+  // ✅ SESSION-SAFE AUTH CHECK (FIXES EMAIL VERIFY ISSUE)
   useEffect(() => {
-    const checkUser = async () => {
-      const { data } = await supabase.auth.getUser();
-      if (!data.user) {
+    const checkSession = async () => {
+      const { data } = await supabase.auth.getSession();
+
+      if (!data.session) {
         navigate("/login");
-      } else {
-        setUser(data.user);
-        fetchImages(data.user.id);
+        return;
       }
+
+      setUser(data.session.user);
+      fetchImages(data.session.user.id);
     };
-    checkUser();
+
+    checkSession();
   }, [navigate]);
 
   // ✅ Fetch images and generate signed URLs
@@ -36,13 +39,13 @@ export default function Dashboard() {
 
       if (error) throw error;
 
-      // Generate signed URLs for each file (valid 1 hour)
       const urls = await Promise.all(
         data.map(async (file) => {
           const { data: signedUrlData, error } = await supabase
             .storage
             .from("user-images")
             .createSignedUrl(`${userId}/${file.name}`, 3600);
+
           if (error) throw error;
           return signedUrlData.signedUrl;
         })
@@ -56,13 +59,12 @@ export default function Dashboard() {
 
   // ✅ Handle file upload
   const handleUpload = async () => {
-    if (!file) return;
+    if (!file || !user) return;
 
     setUploading(true);
     const fileName = `${Date.now()}-${file.name}`;
 
     try {
-      // Upload file to private bucket
       const { error: uploadError } = await supabase
         .storage
         .from("user-images")
@@ -70,7 +72,6 @@ export default function Dashboard() {
 
       if (uploadError) throw uploadError;
 
-      // Generate signed URL for the new file
       const { data: signedUrlData, error } = await supabase
         .storage
         .from("user-images")
@@ -89,7 +90,12 @@ export default function Dashboard() {
 
   return (
     <Layout>
-    <ImageGallery />
+      <ImageGallery
+        images={images}
+        onUpload={handleUpload}
+        uploading={uploading}
+        setFile={setFile}
+      />
     </Layout>
   );
 }
