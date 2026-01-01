@@ -90,6 +90,7 @@ export default function Dashboard() {
 
   return (
     <Layout>
+      <h2>Hello {user?.user_metadata?.username || "User"} 👋</h2>
       <ImageGallery
         images={images}
         onUpload={handleUpload}
