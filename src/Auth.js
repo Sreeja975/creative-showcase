@@ -6,13 +6,19 @@ import { supabase } from "./supabase";
  * - Creates auth user
  * - Stores username in user_metadata
  */
+
+const redirectURL =
+  process.env.NODE_ENV === "production"
+    ? "https://your-vercel-app.vercel.app/dashboard"
+    : "http://localhost:3000/dashboard";
+
 export const signUpUser = async (email, password, username) => {
   return await supabase.auth.signUp({
     email,
     password,
     options: {
       data: { username },
-      emailRedirectTo: `https://creative-showcase-nu.vercel.app/dashboard`
+      emailRedirectTo: redirectURL
     }
   });
 };
