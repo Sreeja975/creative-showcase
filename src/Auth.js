@@ -13,15 +13,14 @@ const redirectURL =
     : "http://localhost:3000/dashboard";
 
 export const signUpUser = async (email, password, username) => {
-  return await supabase.auth.signUp({
-    email,
-    password,
+  const { data, error } = await supabase.auth.signUp({
+    email: email.trim(),
+    password: password.trim(),
     options: {
       data: { username },
-      emailRedirectTo: redirectURL
-    }
+      emailRedirectTo: redirectURL,
+    },
   });
-};
 
   if (error) {
     console.error("SIGNUP ERROR:", error.message);
