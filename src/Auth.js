@@ -12,7 +12,7 @@ export const signUpUser = async (email, password, username) => {
     password,
     options: {
       data: { username },
-      emailRedirectTo: `${window.location.origin}/dashboard`
+      emailRedirectTo: `https://creative-showcase-nu.vercel.app/dashboard`
     }
   });
 };
