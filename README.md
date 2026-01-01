@@ -105,6 +105,13 @@ creative-showcase/
 ├─ package.json
 └─ README.md
 ```
+Screenshots
+
+Signup: <img width="1920" height="1080" alt="Signup" src="https://github.com/user-attachments/assets/271898a7-0ae7-4643-938e-1a7e9391aabd" />
+
+Dashboard: <img width="1920" height="1080" alt="Dashboard" src="https://github.com/user-attachments/assets/da96a8f8-b03b-4ead-8772-5e914bfda2b3" />
+
+Imageupload: <img width="1920" height="1080" alt="Imageupload" src="https://github.com/user-attachments/assets/91634738-ec2a-4b53-aac7-869bd7f5ed0d" />
 
 ---
 
