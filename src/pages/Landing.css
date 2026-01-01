@@ -1,0 +1,36 @@
+.landing {
+  padding: 20px;
+}
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-buttons a {
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  margin: 10px 0 20px;
+  color: #666;
+}
+
+.masonry {
+  column-count: 3;
+  column-gap: 15px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 15px;
+}
+
+.masonry-item img {
+  width: 100%;
+  border-radius: 8px;
+}
