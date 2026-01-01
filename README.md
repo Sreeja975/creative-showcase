@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+Creative Showcase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Creative Showcase is a **React + Supabase web application** that allows users to sign up, log in, and showcase their creative work by uploading and displaying images on a personal dashboard.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+* **User Authentication:** Signup/Login using Supabase email authentication
+* **Dashboard:** Personalized dashboard displaying uploaded images
+* **Image Upload:** Users can upload and manage their images
+* **Responsive Design:** Works on both desktop and mobile devices
+* **Hosted on Vercel** for easy deployment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+* **Frontend:** React, JavaScript, CSS
+* **Backend & Database:** Supabase (Auth, Storage, Database)
+* **Hosting:** Vercel
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Installation & Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/YourUsername/creative-showcase.git
+cd creative-showcase
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies**
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Create a `.env` file in the root directory** with your Supabase credentials:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```env
+REACT_APP_SUPABASE_URL=your_supabase_url
+REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Run the app locally**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+* Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## App Flow
 
-### Code Splitting
+1. **Signup / Login**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   * Users can create an account or login using their email.
+   * After login, users are redirected to the **Dashboard**.
 
-### Analyzing the Bundle Size
+2. **Dashboard**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   * Displays all uploaded images for the logged-in user.
+   * Option to upload new images.
 
-### Making a Progressive Web App
+3. **Image Upload**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   * Images are stored in **Supabase Storage**.
+   * Public URLs are used to display images in the dashboard.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Deployment (Vercel)
 
-### Deployment
+1. Push your project to GitHub.
+2. Import the repository into [Vercel](https://vercel.com/).
+3. Set **Environment Variables** in Vercel Dashboard:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```env
+REACT_APP_SUPABASE_URL=your_supabase_url
+REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-### `npm run build` fails to minify
+4. Click **Deploy**. Your app will be live at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+https://creative-showcase-nu.vercel.app/
+```
+
+---
+
+## Folder Structure
+
+```
+creative-showcase/
+├─ public/
+├─ src/
+│  ├─ components/       # Reusable React components
+│  ├─ pages/            # App pages (Login, Signup, Dashboard)
+│  ├─ supabase.js       # Supabase client config
+│  └─ App.js            # Main App
+├─ package.json
+└─ README.md
+```
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## Author
+
+**Your Name**
+GitHub: [Sreeja975](https://github.com/Sreeja975)
+Email: [bwumca24001@brainwareuniversity.ac.in](mailto:bwumca24001@brainwareuniversity.ac.in)
