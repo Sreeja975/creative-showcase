@@ -6,16 +6,16 @@ import { supabase } from "./supabase";
  * - Creates auth user
  * - Stores username in user_metadata
  */
-export const signUpUser = async (username, email, password) => {
-  const { data, error } = await supabase.auth.signUp({
-    email: email.trim(),
-    password: password.trim(),
+export const signUpUser = async (email, password, username) => {
+  return await supabase.auth.signUp({
+    email,
+    password,
     options: {
-      data: {
-        username: username.trim(), // stored in user_metadata
-      },
-    },
+      data: { username },
+      emailRedirectTo: `${window.location.origin}/dashboard`
+    }
   });
+};
 
   if (error) {
     console.error("SIGNUP ERROR:", error.message);
