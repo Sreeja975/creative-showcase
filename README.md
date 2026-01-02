@@ -87,7 +87,7 @@ REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
 4. Click **Deploy**. Your app will be live at:
 
 ```
-https://creative-showcase-nu.vercel.app/
+https://sreeja975-creative-showcase.vercel.app/
 ```
 
 ---
