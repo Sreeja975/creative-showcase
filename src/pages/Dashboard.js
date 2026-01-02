@@ -9,6 +9,8 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [file, setFile] = useState(null);
+  const [images, setImages] = useState([]);
+  const [uploading, setUploading] = useState(false); 
 
   // ✅ SESSION-SAFE AUTH CHECK (FIXES EMAIL VERIFY ISSUE)
   useEffect(() => {
