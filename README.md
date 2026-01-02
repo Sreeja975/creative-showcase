@@ -111,7 +111,7 @@ Signup: <img width="1920" height="1080" alt="Signup" src="https://github.com/use
 
 Dashboard: <img width="1920" height="1080" alt="Dashboard" src="https://github.com/user-attachments/assets/da96a8f8-b03b-4ead-8772-5e914bfda2b3" />
 
-Imageupload: <img width="1920" height="1080" alt="Imageupload" src="https://github.com/user-attachments/assets/91634738-ec2a-4b53-aac7-869bd7f5ed0d" />
+Imageupload: <img width="1920" height="1080" alt="Imageupload" src="https://github.com/user-attachments/assets/96b1cd2b-cac4-4679-a164-635484f6e286" />
 
 ---
 
